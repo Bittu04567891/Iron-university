@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -58,17 +59,17 @@ const Navbar = () => {
               <div className="d-flex  flex-column flex-lg-row align-items-center">
                 <ul className="navbar-nav  ">
                   <li className="nav-item ">
-                    <a className="nav-link" href="index.html">
+                    <Link to="/Iron-university/" className="nav-link">
                       Home <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item active">
-                    <a className="nav-link" href="#">
-                      About{" "}
-                    </a>
+                    <Link to="/Iron-university/about" className="nav-link">
+                      About
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="/">
                       Services{" "}
                     </a>
                   </li>
