@@ -11,13 +11,11 @@ const About = () => {
           </div>
           <div className="box">
             <div className="img-box">
-              <img src="images/about-img.png" alt="" />
+              <img src="images/iron-university-logo.jpg" alt="" />
             </div>
             <div className="detail-box">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis
+              Discover fitness made simple at our modern facility. From top-notch equipment to friendly trainers, we're here to make your journey easy and enjoyable. Get ready to achieve your fitness goals in a welcoming environment. Join us – where simplicity meets strength!
               </p>
               <Link to="./About">Read More</Link>
             </div>

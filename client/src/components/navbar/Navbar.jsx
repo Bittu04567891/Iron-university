@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg custom_nav-container">
             <a className="navbar-brand" href="index.html">
-              <img src="images/logo.png" alt="" />
+              <img src="images/iron-university-logo.jpg" alt="" />
               <span>Iron University</span>
             </a>
             <div className="contact_nav" id="">

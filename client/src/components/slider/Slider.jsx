@@ -10,6 +10,7 @@ const Slider = () => {
             className="carousel slide"
             data-ride="carousel"
           >
+            
             <ol className="carousel-indicators">
               <li
                 data-target="#carouselExampleIndicators"
@@ -31,20 +32,17 @@ const Slider = () => {
                   <div className="row">
                     <div className="col-lg-6 col-md-7 offset-md-6 offset-md-5">
                       <div className="detail-box">
-                        <h2>Get Your Body</h2>
-                        <h1>Fitness Here</h1>
+                        <h2>Fit In, Stand Out</h2>
+                        <h3>Embrace Wellness by Joining Our Gym Community</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam
+                        Unlock exclusive benefits and join a vibrant fitness community. Your transformative journey begins with a simple sign-up
+                        
                         </p>
                         <div className="btn-box">
                           <a href="" className="btn-1">
                             Read More
                           </a>
-                          <a href="" className="btn-2">
-                            Get A Quote
-                          </a>
+                          
                         </div>
                       </div>
                     </div>
@@ -56,20 +54,16 @@ const Slider = () => {
                   <div className="row">
                     <div className="col-lg-6 col-md-7 offset-md-6 offset-md-5">
                       <div className="detail-box">
-                        <h2>Get Your Body</h2>
-                        <h1>Fitness Here</h1>
+                        <h2>Personal Training</h2>
+                        <h3>Personalized Training for Success</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam
+                        Personalized training for your peak performance—ignite your fitness journey with expert guidance and tailored workout programs
                         </p>
                         <div className="btn-box">
                           <a href="" className="btn-1">
                             Read More
                           </a>
-                          <a href="" className="btn-2">
-                            Get A Quote
-                          </a>
+                          
                         </div>
                       </div>
                     </div>
@@ -81,20 +75,16 @@ const Slider = () => {
                   <div className="row">
                     <div className="col-lg-6 col-md-7 offset-md-6 offset-md-5">
                       <div className="detail-box">
-                        <h2>Get Your Body</h2>
-                        <h1>Fitness Here</h1>
+                        <h2>Nutrient Essentials</h2>
+                        <h3>Elevate Your Well-Being with Quality Supplements</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam
+                        Invest in your wellness journey with quality supplements. Choose products aligned with your health and fitness goals for optimal results
                         </p>
                         <div className="btn-box">
                           <a href="" className="btn-1">
                             Read More
                           </a>
-                          <a href="" className="btn-2">
-                            Get A Quote
-                          </a>
+                          
                         </div>
                       </div>
                     </div>
