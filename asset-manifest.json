@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Iron-university/static/css/main.21eda59b.css",
-    "main.js": "/Iron-university/static/js/main.c666a2b7.js",
+    "main.js": "/Iron-university/static/js/main.da2dc174.js",
     "index.html": "/Iron-university/index.html",
     "main.21eda59b.css.map": "/Iron-university/static/css/main.21eda59b.css.map",
-    "main.c666a2b7.js.map": "/Iron-university/static/js/main.c666a2b7.js.map"
+    "main.da2dc174.js.map": "/Iron-university/static/js/main.da2dc174.js.map"
   },
   "entrypoints": [
     "static/css/main.21eda59b.css",
-    "static/js/main.c666a2b7.js"
+    "static/js/main.da2dc174.js"
   ]
 }
