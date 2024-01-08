@@ -74,14 +74,14 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Contact Us
-                    </a>
+                    <Link to="/Iron-university/product" className="nav-link">
+                      Shop
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <Link to="/Iron-university/login" className="nav-link">
                       Login
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">

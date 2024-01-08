@@ -14,25 +14,25 @@
     transform: scale(1.05);
   }
 
-  .product img {
+   img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
   }
 
-  .product h2 {
+   h2 {
     color: #333;
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
 
-  .product p {
+   p {
     color: #666;
     margin-bottom: 15px;
   }
 
-  .product button {
+   button {
     background-color: #4caf50;
     color: #fff;
     border: none;
