@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductList from "./pages/productList/ProductList";
 import Login from "./pages/login/Login";
+import Cart from "./pages/cart/Cart";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/Iron-university/about" element={<About />} />
           <Route path="/Iron-university/product" element={<ProductList />} />
           <Route path="/Iron-university/login" element={<Login />} />
+          <Route path="/Iron-university/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </BrowserRouter>
