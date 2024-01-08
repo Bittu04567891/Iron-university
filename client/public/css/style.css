@@ -186,8 +186,8 @@ a:focus {
 }
 
 .navbar-brand img {
-  width: 35px;
-  margin-right: 5px;
+  width: 45px;
+  margin-right: 6px;
 }
 
 .navbar-brand span {
@@ -219,8 +219,9 @@ a:focus {
 /* slider section */
 .slider_section {
   height: calc(100% - 80px);
-  background-image: url(../images/slider-bg.jpg);
+  background-image: url(../images/gym-background-1.jpg);
   background-size: cover;
+  
 }
 
 .slider_section .slider_container {
@@ -239,10 +240,11 @@ a:focus {
 
 .slider_section .detail-box h2 {
   color: #f8bc1a;
+  font-size: 4rem;
 }
 
-.slider_section .detail-box h1 {
-  font-size: 4rem;
+.slider_section .detail-box h3 {
+  /* font-size: 4rem; */
   font-weight: bold;
   color: #f4f3f3;
   text-transform: uppercase;
@@ -373,7 +375,7 @@ a:focus {
 }
 
 .about_section .box .img-box img {
-  max-width: 100%;
+  max-width: 15%;
 }
 
 .about_section .box .detail-box {
@@ -567,7 +569,7 @@ a:focus {
 }
 
 .client_section .box .img-box img {
-  width: 100%;
+  width: 50%;
 }
 
 .client_section .box .detail-box {

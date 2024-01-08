@@ -19,11 +19,9 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-3">
-              <h6>About Energym</h6>
+              <h6>About Energy</h6>
               <p>
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation u
+                Training
               </p>
             </div>
             <div className="col-md-2 offset-md-1">

@@ -32,14 +32,24 @@ const Client = () => {
               <div className="carousel-item active">
                 <div className="box">
                   <div className="img-box">
-                    <img src="images/client.png" alt="" />
+                    <img src="images/shaket.png" alt="" />
                   </div>
                   <div className="detail-box">
-                    <h5>Consectetur</h5>
+                    <h5>Shaket Shubham</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud
+                    A great gym where you can freshen your mind. The trainers are professionally skilled and they will help you do the workout properly. This can be the best place where you can relax, chill and freshen up your mind. Anyone wants to join the gym so this can be best gym in this area.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="box">
+                  <div className="img-box">
+                    <img src="images/shashank.png" alt="" />
+                  </div>
+                  <div className="detail-box">
+                    <h5>Shashank Shekhar</h5>
+                    <p>
+                    The best gym in Bokaro, only place where you have bumper plates, rubber plates and iron plates, Ravi bhaiya is very encouraging and helps everyone at the gym and the overall atmosphere is very friendly. This gym is a must visit .Had an amazing experience!!!!
                     </p>
                   </div>
                 </div>
@@ -47,29 +57,12 @@ const Client = () => {
               <div className="carousel-item">
                 <div className="box">
                   <div className="img-box">
-                    <img src="images/client.png" alt="" />
+                    <img src="images/rakhi.png" alt="" />
                   </div>
                   <div className="detail-box">
-                    <h5>Consectetur</h5>
+                    <h5>Rakhi Choudhary</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="box">
-                  <div className="img-box">
-                    <img src="images/client.png" alt="" />
-                  </div>
-                  <div className="detail-box">
-                    <h5>Consectetur</h5>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud
+                    Iron University gym one of Best gym around chas bokaro area with wonderful guidance,all equipment ,if you are a thinking about to start a fitness journey then you should got for it !! Nd also great environment... Really appreciate the coach Ravi sir well behavior nd guidance
                     </p>
                   </div>
                 </div>
