@@ -1,0 +1,72 @@
+/* ProductList.css */
+.ProductList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    width: 100%;
+  }
+  .heading-product{
+    margin-left: 30%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  /* Add any additional styling for the ProductList component here */
+  /* Add this to your existing CSS or create a new CSS file */
+
+.filter-dropdown {
+    margin: 20px 0;
+    margin-left: 10%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  select:hover,
+  select:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Style for the options */
+  option {
+    font-size: 16px;
+  }
+  
+  /* Style for the dropdown arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+  }
+  
+  /* Style for the selected option */
+  select option:checked {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  /* Add any additional styling for the filter dropdown as needed */
+  
