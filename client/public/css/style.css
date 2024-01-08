@@ -422,6 +422,7 @@ a:focus {
 
 .service_section .service_container .box img {
   width: 100%;
+  height: 90%;
 }
 
 .service_section .service_container .box .visible_heading {

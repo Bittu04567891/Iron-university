@@ -18,8 +18,19 @@ const Result = () => {
                   BEST RESULTS
                 </h2>
                 <p>
-                  shaket shubham
+                Business Hours
                 </p>
+<div>Mon: 5:00 AM – 10:00 PM</div>
+<div>Tue: 5:00 AM – 10:00 PM</div>
+<div>Wed: 5:00 AM – 10:00 PM</div>
+<div>Thur: 5:00 AM – 10:00 PM</div>
+<div>Fri: 5:00 AM – 10:00 PM</div>
+<div>Sat: 5:00 AM – 10:00 PM</div>
+
+
+
+<div>Sun: Closed</div>
+                
                 
               </div>
             </div>
