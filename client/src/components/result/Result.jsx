@@ -20,7 +20,7 @@ const Result = () => {
                 <p>
                   shaket shubham
                 </p>
-                <a href="">Get A Quote</a>
+                
               </div>
             </div>
           </div>

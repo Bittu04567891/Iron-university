@@ -17,8 +17,7 @@ const Us = () => {
               <div className="detail-box">
                 <h5>QUALITY EQUIPMENT</h5>
                 <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor
+                Optimize your workout experience with our premium equipment, designed for quality, durability, and unmatched performance
                 </p>
               </div>
             </div>
@@ -29,23 +28,11 @@ const Us = () => {
               <div className="detail-box">
                 <h5>HEALTHY NUTRITION PLAN</h5>
                 <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor
+                Nourish your well-being with our balanced nutrition plans—crafted for vitality, flavor, and sustainable healthy habits
                 </p>
               </div>
             </div>
-            <div className="box">
-              <div className="img-box">
-                <img src="images/u-3.png" alt="" />
-              </div>
-              <div className="detail-box">
-                <h5>SHOWER SERVICE</h5>
-                <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor
-                </p>
-              </div>
-            </div>
+            
             <div className="box">
               <div className="img-box">
                 <img src="images/u-4.png" alt="" />
@@ -53,8 +40,7 @@ const Us = () => {
               <div className="detail-box">
                 <h5>UNIQUE TO YOUR NEEDS</h5>
                 <p>
-                  ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor
+                Personalized, simple, and unique nutrition plans for your healthy lifestyle
                 </p>
               </div>
             </div>
