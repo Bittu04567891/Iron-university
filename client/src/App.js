@@ -7,6 +7,8 @@ import Footer from "./components/footer/Footer";
 import ProductList from "./pages/productList/ProductList";
 import Login from "./pages/login/Login";
 import Cart from "./pages/cart/Cart";
+import Profile from "./pages/profile/Profile";
+import Register from "./pages/register/Register";
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
           <Route path="/Iron-university/product" element={<ProductList />} />
           <Route path="/Iron-university/login" element={<Login />} />
           <Route path="/Iron-university/cart" element={<Cart />} />
+          <Route path="/Iron-university/register" element={<Register />} />
         </Routes>
         <Footer />
       </BrowserRouter>

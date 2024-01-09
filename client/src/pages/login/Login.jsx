@@ -1,42 +1,83 @@
 // Login.jsx
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css"; // Import your stylesheet
+import axios from "axios";
+import Profile from "../profile/Profile";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [data, setData] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/auth/login", {
+        username: username,
+        password: password,
+      });
+      setSuccess(true);
+      setData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="login-container">
-      <div className="login-form-box">
-        <h2 className="login-heading">Login to Your Account</h2>
-        <form className="login`````````````````````````````-form">
-          <label htmlFor="email" className="login-label">
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="login-input"
-            placeholder="Enter your email"
-            required
-          />
+      {!success && (
+        <div className="login-form-box">
+          <h2 className="login-heading">Login to Your Account</h2>
+          <form className="login-form">
+            <label htmlFor="username" className="login-label">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              className="login-input"
+              placeholder="Enter your username"
+              required
+              onChange={(e) => setUsername(e.target.value)}
+            />
 
-          <label htmlFor="password" className="login-label">
-            Password:
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            className="login-input"
-            placeholder="Enter your password"
-            required
-          />
+            <label htmlFor="password" className="login-label">
+              Password:
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="login-input"
+              placeholder="Enter your password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <button type="submit" className="login-button">
-            Login
-          </button>
-        </form>
-      </div>
+            <button
+              type="submit"
+              className="login-button"
+              onClick={handleSubmit}
+            >
+              Login
+            </button>
+          </form>
+          <div className="reg">
+            Dont't have an account?
+            <Link to="/Iron-university/register">
+              <button className="regis">Register</button>
+            </Link>
+          </div>
+        </div>
+      )}
+      {success && (
+        <div className="welcome">
+          <Profile user={data} />
+        </div>
+      )}
     </div>
   );
 };
