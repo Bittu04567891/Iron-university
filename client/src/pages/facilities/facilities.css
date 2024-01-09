@@ -1,0 +1,58 @@
+.Facilities{
+
+    width: 100%;
+}
+
+h1{
+    margin: 3% 0% 0 10%;
+}
+.Allfacilities{
+margin: 5% 10% 5% 10%;
+}
+.Servies-data{
+    display: flex;
+    margin-bottom: 10%;
+    
+}
+.facilityname{
+    width: 59%;
+    /* padding-right: 13%; */
+}
+.facilityimg1{
+    /* max-width: 50%; */
+    
+}
+.facilityimg{
+    /* width: 20%; */
+    width: 70%;
+    margin-left: 15%;
+    /* height: 60%; */
+}
+@media only screen and (max-width:1000px){
+    .facilityimg{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:850px){
+    .Servies-data{
+        flex-direction: column;
+        align-items: center;
+    }
+    .facilityname{
+        width: 90%;
+    }
+    .facilityimg{
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+@media only screen and (max-width:500px) {
+    .facilityimg{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .facilityname{
+        width: 100%;
+    }
+    
+}
