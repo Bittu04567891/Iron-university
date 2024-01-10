@@ -3,7 +3,6 @@ import React from "react";
 import "./Profile.css";
 
 const Profile = ({ user }) => {
-  // Assuming 'user' is an object containing user information
   const { name, username, email, img } = user;
 
   return (

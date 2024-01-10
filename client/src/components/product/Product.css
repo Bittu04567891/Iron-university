@@ -1,47 +1,45 @@
-
+/* Product.css */
 .product {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  border: 2px solid #ddd;
   padding: 20px;
-  text-align: center;
-  width: 250px;
-  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
-  &:hover {
-    transform: scale(1.05);
-  }
+.product img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
-   img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-   h2 {
-    color: #333;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
+.quantity-container label {
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-   p {
-    color: #666;
-    margin-bottom: 15px;
-  }
+.quantity-container input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 
-   button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
