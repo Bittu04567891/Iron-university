@@ -1,16 +1,19 @@
-// Login.jsx
 import React, { useState } from "react";
-import "./Login.css"; // Import your stylesheet
+import "./Login.css";
 import axios from "axios";
 import Profile from "../profile/Profile";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useAppContext } from "../../Context/AppContext";
+
 const Login = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [success, setSuccess] = useState(false);
 
   const { user, setUser } = useAppContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -18,11 +21,17 @@ const Login = () => {
         username: username,
         password: password,
       });
-      setSuccess(true);
 
+      // Show success toast
+      toast.success("Login successful!");
+
+      setSuccess(true);
       setUser(res.data);
     } catch (err) {
-      console.log(err);
+      // Show error toast
+      toast.error("Login failed. Please check your credentials.");
+
+      console.error(err);
     }
   };
 
@@ -73,7 +82,7 @@ const Login = () => {
               </button>
             </form>
             <div className="reg">
-              Dont't have an account?
+              Don't have an account?
               <Link to="/Iron-university/register">
                 <button className="regis">Register</button>
               </Link>
@@ -81,6 +90,7 @@ const Login = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </>
   );
 };

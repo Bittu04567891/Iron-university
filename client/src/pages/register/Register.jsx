@@ -1,8 +1,9 @@
-// Register.jsx
 import React, { useState } from "react";
 import "./Register.css";
 import axios from "axios";
 import Profile from "../profile/Profile";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const Register = () => {
   const [imgUrl, setImgUrl] = useState("");
   const [success, setSuccess] = useState(false);
   const [data, setData] = useState({});
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -22,10 +24,17 @@ const Register = () => {
         img: imgUrl,
         email: email,
       });
+
+      // Show success toast
+      toast.success("Registration successful!");
+
       setSuccess(true);
       setData(res.data);
     } catch (err) {
-      console.log(err);
+      // Show error toast
+      toast.error("Registration failed. Please check your input.");
+
+      console.error(err);
     }
   };
 
@@ -99,6 +108,7 @@ const Register = () => {
           <Profile user={data} />
         </div>
       )}
+      <ToastContainer />
     </>
   );
 };
