@@ -10,6 +10,9 @@ import Cart from "./pages/cart/Cart";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
 
+import Success from "./components/Success";
+import Failure from "./components/Failure";
+
 const App = () => {
   return (
     <>
@@ -22,6 +25,9 @@ const App = () => {
           <Route path="/Iron-university/login" element={<Login />} />
           <Route path="/Iron-university/cart" element={<Cart />} />
           <Route path="/Iron-university/register" element={<Register />} />
+          {/* <Route exact path="/Iron-university/payment" element={<Phonepe />} /> */}
+          <Route exact path="/Iron-university/success" element={<Success />} />
+          <Route exact path="/Iron-university/failure" element={<Failure />} />
         </Routes>
         <Footer />
       </BrowserRouter>

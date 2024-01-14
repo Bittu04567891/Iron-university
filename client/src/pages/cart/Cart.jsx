@@ -4,10 +4,22 @@ import { useAppContext } from "../../Context/AppContext";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import StripeCheckout from "react-stripe-checkout";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
+const KEY = process.env.REACT_APP_STRIPE;
 const Cart = () => {
   const { user } = useAppContext();
   const [cartItems, setCartItems] = useState([]);
+  const [address, setAddress] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [stripeToken, setStripeToken] = useState(null);
+  // const history = useHistory();
+
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -54,7 +66,7 @@ const Cart = () => {
       await axios.put(`/carts/${itemId}`, {
         quantity: newQuantity,
       });
-      toast.success("Quantity updated successfully");
+      // toast.success("Quantity updated successfully");
     } catch (err) {
       console.error(err);
       toast.error("Error updating quantity");
@@ -74,6 +86,48 @@ const Cart = () => {
     }
   };
 
+  const handleOrder = async (e) => {
+    e.preventDefault();
+
+    if (!user._id) {
+      toast.error("Login to place the order");
+      return;
+    }
+    try {
+      const response = await axios.get(`/carts/find/${user._id}`);
+
+      const productsArray = response.data.map((product) => ({
+        id: product.productId,
+        quantity: product.quantity,
+      }));
+
+      console.log(productsArray);
+      await axios.post("/orders/", {
+        userId: user._id,
+        products: productsArray,
+        amount: calculateTotal(),
+        mobile: mobile,
+        address: address,
+      });
+      setSuccess(true);
+      toast.success("Order has been placed!");
+    } catch (err) {
+      toast.error("Error occurred!");
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await axios.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: calculateTotal() * 100,
+        });
+        // history.push("/success", { data: res.data });
+      } catch {}
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, calculateTotal()]);
   return (
     <div className="cart-container">
       <h1>Your Shopping Cart</h1>
@@ -110,16 +164,56 @@ const Cart = () => {
         <p>Total: ₹{calculateTotal()}</p>
       </div>
       <div className="payment-section">
-        <h2>Payment Information</h2>
         <p>
-          Payment method: <strong>Mock Payment</strong>
+          Address:{" "}
+          <input
+            type="string"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            style={{ width: "60%" }}
+          />
         </p>
-        <button
-          className="pay-button"
-          onClick={() => toast.success("Payment successful!")}
-        >
-          Pay Now
-        </button>
+        <p>
+          Mobile No:+91{" "}
+          <input
+            type="text"
+            value={mobile}
+            onChange={(e) => {
+              // Allow only digits and limit the length to 10
+              const sanitizedInput = e.target.value
+                .replace(/\D/g, "")
+                .slice(0, 10);
+              setMobile(sanitizedInput);
+            }}
+            style={{ width: "40%" }}
+          />
+        </p>
+
+        {!success && (
+          <button
+            className="pay-button"
+            // onClick={() => toast.success("Payment successful!")}
+            onClick={handleOrder}
+          >
+            Place Order
+          </button>
+        )}
+        {success && (
+          <div>
+            <StripeCheckout
+              name="Prism Cart"
+              image="./images/iron-university-logo.jpg"
+              billingAddress
+              shippingAddress
+              description={`Your total is ₹${calculateTotal()}`}
+              amount={calculateTotal() * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <button>Pay</button>
+            </StripeCheckout>
+          </div>
+        )}
       </div>
       <ToastContainer />
     </div>
