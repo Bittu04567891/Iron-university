@@ -12,6 +12,7 @@ import Register from "./pages/register/Register";
 
 import Success from "./components/Success";
 import Failure from "./components/Failure";
+import OrderDetails from "./components/orderDetails/OrderDetails";
 
 const App = () => {
   return (
@@ -28,6 +29,11 @@ const App = () => {
           {/* <Route exact path="/Iron-university/payment" element={<Phonepe />} /> */}
           <Route exact path="/Iron-university/success" element={<Success />} />
           <Route exact path="/Iron-university/failure" element={<Failure />} />
+          <Route
+            exact
+            path="/Iron-university/orderdetails"
+            element={<OrderDetails />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

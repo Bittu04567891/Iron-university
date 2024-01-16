@@ -5,14 +5,17 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import StripeCheckout from "react-stripe-checkout";
+import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
-const KEY = process.env.REACT_APP_STRIPE;
+// const KEY = process.env.REACT_APP_STRIPE;
+const KEY =
+  "pk_test_51OYAmnSJY7qu9uFffONpvqAanIeminJIXiglM92Ljmd3Ap3jZMIHCSZmzUTBBtqpqRrwGZXXvndZLG6XApqn4lJB007bd5YRRw";
 const Cart = () => {
   const { user } = useAppContext();
   const [cartItems, setCartItems] = useState([]);
-  const [address, setAddress] = useState("");
-  const [mobile, setMobile] = useState("");
+  const [address, setAddress] = useState("abc");
+  const [mobile, setMobile] = useState("8949325668");
   const [success, setSuccess] = useState(false);
   const [stripeToken, setStripeToken] = useState(null);
   // const history = useHistory();
@@ -123,8 +126,15 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: calculateTotal() * 100,
         });
+        console.log(res);
         // history.push("/success", { data: res.data });
-      } catch {}
+        toast.success(
+          "Payment Successful!Order details will be notified in mail"
+        );
+      } catch (err) {
+        console.log(err);
+        toast.error("Payment not successful! Retry Later");
+      }
     };
     stripeToken && makeRequest();
   }, [stripeToken, calculateTotal()]);
@@ -164,7 +174,7 @@ const Cart = () => {
         <p>Total: ₹{calculateTotal()}</p>
       </div>
       <div className="payment-section">
-        <p>
+        {/* <p>
           Address:{" "}
           <input
             type="string"
@@ -187,16 +197,23 @@ const Cart = () => {
             }}
             style={{ width: "40%" }}
           />
-        </p>
+        </p> */}
 
         {!success && (
-          <button
-            className="pay-button"
-            // onClick={() => toast.success("Payment successful!")}
-            onClick={handleOrder}
-          >
-            Place Order
-          </button>
+          <div>
+            <span>
+              <Link to="/Iron-university/orderdetails">
+                <button>Order Details</button>
+              </Link>
+              <button
+                className="pay-button"
+                // onClick={() => toast.success("Payment successful!")}
+                onClick={handleOrder}
+              >
+                Place Order
+              </button>
+            </span>
+          </div>
         )}
         {success && (
           <div>
