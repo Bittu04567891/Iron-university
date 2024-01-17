@@ -1,0 +1,57 @@
+/* OrderDetails.css */
+
+.order-details-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 37%;
+  }
+  
+  .order-details-container h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .order-details-container p {
+    color: #666;
+    text-align: center;
+  }
+  
+  .order-details-container form {
+    margin-top: 20px;
+  }
+  
+  .order-details-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .order-details-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .order-details-container button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .order-details-container button:hover {
+    background-color: #45a049;
+  }
+  

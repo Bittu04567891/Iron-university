@@ -5,8 +5,8 @@
     align-items: center;
     height: 100vh;
     /* background-color: transparent;  */
-    background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
-    background-repeat: no-repeat;
+    /* background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png'); */
+    /* background-repeat: no-repeat; */
     background-size: 100%;
   }
   
@@ -54,4 +54,14 @@
   .login-button:hover {
     background-color: #e23e29;
   }
-  
+  .regis{
+    border: 2px solid white;
+    color:white;
+    background-color: #e23e29;
+    border-radius: 6px;
+  }
+  .reg{
+    margin-top: 5px;
+    
+  }
+ 
