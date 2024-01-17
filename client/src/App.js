@@ -7,6 +7,9 @@ import Footer from "./components/footer/Footer";
 import ProductList from "./pages/productList/ProductList";
 import Login from "./pages/login/Login";
 
+import Facilities from "./pages/facilities/Facilities";
+import OrderPage from "./pages/ordered/Orderpage";
+
 const App = () => {
   return (
     <>
@@ -17,6 +20,8 @@ const App = () => {
           <Route path="/Iron-university/about" element={<About />} />
           <Route path="/Iron-university/product" element={<ProductList />} />
           <Route path="/Iron-university/login" element={<Login />} />
+          <Route path="/Iron-university/Orderpage" element={<OrderPage />} />
+          <Route path="/Iron-university/Facilities" element={<Facilities />} />
         </Routes>
         <Footer />
       </BrowserRouter>
