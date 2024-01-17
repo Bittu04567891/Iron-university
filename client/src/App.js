@@ -6,7 +6,6 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductList from "./pages/productList/ProductList";
 import Login from "./pages/login/Login";
-import Facilities from "./pages/facilities/Facilities";
 
 const App = () => {
   return (
@@ -18,8 +17,6 @@ const App = () => {
           <Route path="/Iron-university/about" element={<About />} />
           <Route path="/Iron-university/product" element={<ProductList />} />
           <Route path="/Iron-university/login" element={<Login />} />
-          <Route path="/Iron-university/facilities" element={<Facilities />} />
-          
         </Routes>
         <Footer />
       </BrowserRouter>
