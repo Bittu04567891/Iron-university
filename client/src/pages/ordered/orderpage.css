@@ -1,0 +1,45 @@
+/* OrderPage.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.order-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px 0;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.leftright{
+  display: flex;
+  /* justify-content: space-between; */
+}
+.right{
+  padding: 5% 2% 0% 5%;
+}
+
+.order-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9; /* Change background color on hover */
+  transform: scale(1.03); /* Scale up slightly on hover */
+  cursor: pointer;
+}
+
+.order-card h2 {
+  margin-bottom: 10px;
+}
+
+.order-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.order-card p {
+  margin: 5px 0;
+}
