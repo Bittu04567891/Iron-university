@@ -1,7 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../Context/AppContext";
 
 const Navbar = () => {
+  const { user, setUser, setProducts, setAmount } = useAppContext();
+
+  const handleClick = (e) => {
+    // e.preventDefault();
+    setUser(null);
+    setProducts([]);
+    setAmount("");
+    console.log(user);
+  };
   return (
     <div className="">
       {" "}
@@ -78,16 +88,49 @@ const Navbar = () => {
                       Shop
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="/Iron-university/login" className="nav-link">
-                      Login
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/Iron-university/cart" className="nav-link">
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </Link>
-                  </li>
+
+                  {user && (
+                    <li className="nav-item" style={{ cursor: "pointer" }}>
+                      <Link
+                        to="/Iron-university/"
+                        className="nav-link"
+                        onClick={handleClick}
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  )}
+                  {!user && (
+                    <li className="nav-item">
+                      <Link to="/Iron-university/login" className="nav-link">
+                        Login
+                      </Link>
+                    </li>
+                  )}
+                  {user && (
+                    <li className="nav-item">
+                      <Link to="/Iron-university/cart" className="nav-link">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </Link>
+                    </li>
+                  )}
+                  {user && (
+                    <li className="nav-item ">
+                      <Link to="/Iron-university/profile" className="nav-link">
+                        {" "}
+                        <img
+                          src={user.img}
+                          alt=""
+                          className="img-fluid rounded-circle"
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

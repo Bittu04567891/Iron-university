@@ -27,8 +27,9 @@ const App = () => {
           <Route path="/Iron-university/cart" element={<Cart />} />
           <Route path="/Iron-university/register" element={<Register />} />
           {/* <Route exact path="/Iron-university/payment" element={<Phonepe />} /> */}
-          <Route exact path="/Iron-university/success" element={<Success />} />
-          <Route exact path="/Iron-university/failure" element={<Failure />} />
+          <Route path="/Iron-university/success" element={<Success />} />
+          <Route path="/Iron-university/failure" element={<Failure />} />
+          <Route path="/Iron-university/profile" element={<Profile />} />
           <Route
             exact
             path="/Iron-university/orderdetails"

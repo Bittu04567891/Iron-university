@@ -6,6 +6,7 @@ const authRoute = require("./routes/auth");
 const cartRoute = require("./routes/cart");
 const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
+const orderDetailsRoute = require("./routes/orderDetails");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 app.use(cors());
@@ -28,6 +29,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/ordersDetails", orderDetailsRoute);
 app.use("/api/checkout", stripeRoute);
 
 app.listen(5000, () => {

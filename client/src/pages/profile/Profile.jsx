@@ -1,8 +1,10 @@
 // Profile.jsx
 import React from "react";
 import "./Profile.css";
+import { useAppContext } from "../../Context/AppContext";
 
-const Profile = ({ user }) => {
+const Profile = () => {
+  const { user } = useAppContext();
   const { name, username, email, img } = user;
 
   return (

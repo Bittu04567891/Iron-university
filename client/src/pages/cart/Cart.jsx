@@ -4,25 +4,20 @@ import { useAppContext } from "../../Context/AppContext";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import StripeCheckout from "react-stripe-checkout";
+
 import { Link } from "react-router-dom";
+
 // import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 // const KEY = process.env.REACT_APP_STRIPE;
-const KEY =
-  "pk_test_51OYAmnSJY7qu9uFffONpvqAanIeminJIXiglM92Ljmd3Ap3jZMIHCSZmzUTBBtqpqRrwGZXXvndZLG6XApqn4lJB007bd5YRRw";
+
 const Cart = () => {
   const { user } = useAppContext();
-  const [cartItems, setCartItems] = useState([]);
-  const [address, setAddress] = useState("abc");
-  const [mobile, setMobile] = useState("8949325668");
-  const [success, setSuccess] = useState(false);
-  const [stripeToken, setStripeToken] = useState(null);
-  // const history = useHistory();
 
-  const onToken = (token) => {
-    setStripeToken(token);
-  };
+  const [cartItems, setCartItems] = useState([]);
+  const [success, setSuccess] = useState(false);
+  const { setAmount } = useAppContext();
+  const { setProducts } = useAppContext();
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -99,18 +94,18 @@ const Cart = () => {
     try {
       const response = await axios.get(`/carts/find/${user._id}`);
 
-      const productsArray = response.data.map((product) => ({
-        id: product.productId,
-        quantity: product.quantity,
+      const productsArray = cartItems.map((item) => ({
+        id: item.productDetails._id, // Assuming _id is the unique identifier for the product
+        title: item.productDetails.title,
+        quantity: item.quantity,
+        img: item.productDetails.img,
       }));
-
       console.log(productsArray);
+      setProducts(productsArray);
       await axios.post("/orders/", {
         userId: user._id,
         products: productsArray,
         amount: calculateTotal(),
-        mobile: mobile,
-        address: address,
       });
       setSuccess(true);
       toast.success("Order has been placed!");
@@ -118,29 +113,13 @@ const Cart = () => {
       toast.error("Error occurred!");
       console.log(err);
     }
+    setAmount(calculateTotal());
   };
-  useEffect(() => {
-    const makeRequest = async () => {
-      try {
-        const res = await axios.post("/checkout/payment", {
-          tokenId: stripeToken.id,
-          amount: calculateTotal() * 100,
-        });
-        console.log(res);
-        // history.push("/success", { data: res.data });
-        toast.success(
-          "Payment Successful!Order details will be notified in mail"
-        );
-      } catch (err) {
-        console.log(err);
-        toast.error("Payment not successful! Retry Later");
-      }
-    };
-    stripeToken && makeRequest();
-  }, [stripeToken, calculateTotal()]);
+
   return (
     <div className="cart-container">
       <h1>Your Shopping Cart</h1>
+
       <div className="cart-items">
         {cartItems.map((item) => (
           <div key={item._id} className="cart-item">
@@ -173,66 +152,29 @@ const Cart = () => {
       <div className="total">
         <p>Total: ₹{calculateTotal()}</p>
       </div>
-      <div className="payment-section">
-        {/* <p>
-          Address:{" "}
-          <input
-            type="string"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            style={{ width: "60%" }}
-          />
-        </p>
-        <p>
-          Mobile No:+91{" "}
-          <input
-            type="text"
-            value={mobile}
-            onChange={(e) => {
-              // Allow only digits and limit the length to 10
-              const sanitizedInput = e.target.value
-                .replace(/\D/g, "")
-                .slice(0, 10);
-              setMobile(sanitizedInput);
-            }}
-            style={{ width: "40%" }}
-          />
-        </p> */}
-
-        {!success && (
-          <div>
-            <span>
-              <Link to="/Iron-university/orderdetails">
-                <button>Order Details</button>
-              </Link>
-              <button
-                className="pay-button"
-                // onClick={() => toast.success("Payment successful!")}
-                onClick={handleOrder}
-              >
-                Place Order
-              </button>
-            </span>
-          </div>
-        )}
-        {success && (
-          <div>
-            <StripeCheckout
-              name="Prism Cart"
-              image="./images/iron-university-logo.jpg"
-              billingAddress
-              shippingAddress
-              description={`Your total is ₹${calculateTotal()}`}
-              amount={calculateTotal() * 100}
-              token={onToken}
-              stripeKey={KEY}
-            >
-              <button>Pay</button>
-            </StripeCheckout>
-          </div>
-        )}
-      </div>
+      <div className="payment-section"></div>
       <ToastContainer />
+
+      {!success && (
+        <div>
+          <button
+            className="pay-button"
+            // onClick={() => toast.success("Payment successful!")}
+            onClick={handleOrder}
+          >
+            Place Order
+          </button>
+        </div>
+      )}
+      {success && (
+        <div>
+          <button>
+            <Link to="/Iron-university/orderdetails" style={{ color: "black" }}>
+              Fill Order Details
+            </Link>
+          </button>
+        </div>
+      )}
     </div>
   );
 };
