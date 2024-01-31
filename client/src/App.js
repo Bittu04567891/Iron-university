@@ -7,6 +7,12 @@ import Footer from "./components/footer/Footer";
 import ProductList from "./pages/productList/ProductList";
 import Login from "./pages/login/Login";
 import Cart from "./pages/cart/Cart";
+import Success from "./components/Success";
+import Failure from "./components/Failure";
+import OrderDetails from "./components/orderDetails/OrderDetails";
+import Register from "./pages/register/Register";
+import Profile from "./pages/profile/Profile";
+import Facilities from "./pages/facilities/Facilities";
 
 const App = () => {
   return (
@@ -20,11 +26,12 @@ const App = () => {
           <Route path="/Iron-university/login" element={<Login />} />
           <Route path="/Iron-university/cart" element={<Cart />} />
           <Route path="/Iron-university/register" element={<Register />} />
-          {/* <Route exact path="/Iron-university/payment" element={<Phonepe />} /> */}
-          <Route exact path="/Iron-university/success" element={<Success />} />
-          <Route exact path="/Iron-university/failure" element={<Failure />} />
+          <Route path="/Iron-university/profile" element={<Profile />} />
+          <Route path="/Iron-university/services" element={<Facilities />} />
+
+          <Route path="/Iron-university/success" element={<Success />} />
+          <Route path="/Iron-university/failure" element={<Failure />} />
           <Route
-            exact
             path="/Iron-university/orderdetails"
             element={<OrderDetails />}
           />

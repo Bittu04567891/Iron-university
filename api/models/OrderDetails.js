@@ -29,6 +29,7 @@ const OrderDetailsSchema = new mongoose.Schema(
     stateProvince: { type: String, required: true },
     postalCode: { type: String, required: true },
     agreeToTerms: { type: Boolean, default: false },
+    status: { type: String, default: "pending" },
   },
   { timestamps: true }
 );

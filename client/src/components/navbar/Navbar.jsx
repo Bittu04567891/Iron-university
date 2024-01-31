@@ -73,16 +73,17 @@ const Navbar = () => {
                       Home <span className="sr-only">(current)</span>
                     </Link>
                   </li>
-                  <li className="nav-item active">
+                  <li className="nav-item ">
                     <Link to="/Iron-university/about" className="nav-link">
                       About
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link to="/Iron-university/services" className="nav-link">
                       Services{" "}
-                    </a>
+                    </Link>
                   </li>
+
                   <li className="nav-item">
                     <Link to="/Iron-university/product" className="nav-link">
                       Shop

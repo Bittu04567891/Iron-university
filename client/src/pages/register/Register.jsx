@@ -105,7 +105,7 @@ const Register = () => {
       )}
       {success && (
         <div className="welcome">
-          <Profile user={data} />
+          <Profile />
         </div>
       )}
       <ToastContainer />
