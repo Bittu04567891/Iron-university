@@ -17,13 +17,16 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", {
-        username: username,
-        name: name,
-        password: password,
-        img: imgUrl,
-        email: email,
-      });
+      const res = await axios.post(
+        `${window.location.origin}/api/auth/register`,
+        {
+          username: username,
+          name: name,
+          password: password,
+          img: imgUrl,
+          email: email,
+        }
+      );
 
       // Show success toast
       toast.success("Registration successful!");

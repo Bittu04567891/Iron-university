@@ -66,7 +66,9 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
-        const response = await axios.get(`/orders/find/${user._id}`);
+        const response = await axios.get(
+          `${window.location.origin}/api/orders/find/${user._id}`
+        );
         setOrderData(response.data);
 
         // Extract products from each order and flatten the array

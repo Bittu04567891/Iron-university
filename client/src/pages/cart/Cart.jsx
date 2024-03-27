@@ -22,12 +22,14 @@ const Cart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const res = await axios.get(`/carts/find/${user._id}`);
+        const res = await axios.get(
+          `${window.location.origin}/api/carts/find/${user._id}`
+        );
         const cartData = res.data;
 
         const productDetailsPromises = cartData.map(async (cartItem) => {
           const productResponse = await axios.get(
-            `/products/find/${cartItem.productId}`
+            `${window.location.origin}/api/products/find/${cartItem.productId}`
           );
           return { ...cartItem, productDetails: productResponse.data };
         });
@@ -61,7 +63,7 @@ const Cart = () => {
       )
     );
     try {
-      await axios.put(`/carts/${itemId}`, {
+      await axios.put(`${window.location.origin}/api/carts/${itemId}`, {
         quantity: newQuantity,
       });
       // toast.success("Quantity updated successfully");
@@ -73,7 +75,7 @@ const Cart = () => {
 
   const deleteProduct = async (itemId) => {
     try {
-      await axios.delete(`/carts/${itemId}`);
+      await axios.delete(`${window.location.origin}/api/carts/${itemId}`);
       setCartItems((prevItems) =>
         prevItems.filter((item) => item._id !== itemId)
       );
@@ -92,7 +94,9 @@ const Cart = () => {
       return;
     }
     try {
-      const response = await axios.get(`/carts/find/${user._id}`);
+      const response = await axios.get(
+        `${window.location.origin}/api/carts/find/${user._id}`
+      );
 
       const productsArray = cartItems.map((item) => ({
         id: item.productDetails._id, // Assuming _id is the unique identifier for the product
@@ -102,7 +106,7 @@ const Cart = () => {
       }));
       console.log(productsArray);
       setProducts(productsArray);
-      await axios.post("/orders/", {
+      await axios.post(`${window.location.origin}/api/orders/`, {
         userId: user._id,
         products: productsArray,
         amount: calculateTotal(),

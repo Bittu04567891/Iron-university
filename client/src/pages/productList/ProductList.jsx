@@ -96,7 +96,7 @@ const ProductList = () => {
 
     const fetchCart = async () => {
       try {
-        const res = await axios.get("/products/");
+        const res = await axios.get(`${window.location.origin}/api/products/`);
 
         console.log(res.data);
         setAllProducts(res.data);

@@ -8,16 +8,19 @@ const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
 const orderDetailsRoute = require("./routes/orderDetails");
 const stripeRoute = require("./routes/stripe");
+
 const cors = require("cors");
 app.use(cors());
 dotenv.config();
 
 mongoose
-  .connect("mongodb://localhost:27017", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    family: 4,
-  })
+  .connect(
+    "mongodb+srv://sultanbittu775:bittu@blog-app-cluster.okfkswm.mongodb.net/",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("DB connection successful");
   })

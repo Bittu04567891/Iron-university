@@ -20,7 +20,9 @@ const Product = ({ _id, title, desc, price, img }) => {
     e.preventDefault();
     try {
       // Fetch the user's cart
-      const cartResponse = await axios.get(`/carts/find/${user._id}`);
+      const cartResponse = await axios.get(
+        `${window.location.origin}/api/carts/find/${user._id}`
+      );
       const existingCart = cartResponse.data;
 
       if (existingCart && Array.isArray(existingCart)) {
@@ -36,7 +38,7 @@ const Product = ({ _id, title, desc, price, img }) => {
       }
 
       // If the product doesn't exist, add it to the cart
-      const res = await axios.post("/carts/", {
+      const res = await axios.post(`${window.location.origin}/api/carts/`, {
         userId: user._id,
         productId: _id,
         quantity: quantity,
