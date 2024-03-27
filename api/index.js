@@ -8,6 +8,7 @@ const productRoute = require("./routes/product");
 const orderRoute = require("./routes/order");
 const orderDetailsRoute = require("./routes/orderDetails");
 const stripeRoute = require("./routes/stripe");
+const path = require("path");
 
 const cors = require("cors");
 app.use(cors());
@@ -34,6 +35,10 @@ app.use("/api/products", productRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/ordersDetails", orderDetailsRoute);
 app.use("/api/checkout", stripeRoute);
+app.get("/", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "client", "build")));
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(5000, () => {
   console.log("Backend server running!");
